@@ -1,0 +1,73 @@
+{
+  "groups": [
+    {
+      "name": "accounts",
+      "type": "org.fisco.bcos.autoconfigure.AccountConfig",
+      "sourceType": "org.fisco.bcos.autoconfigure.AccountConfig"
+    },
+    {
+      "name": "channel-service",
+      "type": "org.fisco.bcos.autoconfigure.ServiceConfig",
+      "sourceType": "org.fisco.bcos.autoconfigure.ServiceConfig"
+    },
+    {
+      "name": "encrypt-type",
+      "type": "org.fisco.bcos.autoconfigure.EncryptTypeConfig",
+      "sourceType": "org.fisco.bcos.autoconfigure.EncryptTypeConfig"
+    },
+    {
+      "name": "group-channel-connections-config",
+      "type": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig",
+      "sourceType": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig"
+    }
+  ],
+  "properties": [
+    {
+      "name": "accounts.p12-file",
+      "type": "java.lang.String",
+      "sourceType": "org.fisco.bcos.autoconfigure.AccountConfig"
+    },
+    {
+      "name": "accounts.password",
+      "type": "java.lang.String",
+      "sourceType": "org.fisco.bcos.autoconfigure.AccountConfig"
+    },
+    {
+      "name": "accounts.pem-file",
+      "type": "java.lang.String",
+      "sourceType": "org.fisco.bcos.autoconfigure.AccountConfig"
+    },
+    {
+      "name": "channel-service.agency-name",
+      "type": "java.lang.String",
+      "sourceType": "org.fisco.bcos.autoconfigure.ServiceConfig"
+    },
+    {
+      "name": "channel-service.group-id",
+      "type": "java.lang.Integer",
+      "sourceType": "org.fisco.bcos.autoconfigure.ServiceConfig",
+      "defaultValue": 0
+    },
+    {
+      "name": "group-channel-connections-config.all-channel-connections",
+      "type": "java.util.List<org.fisco.bcos.channel.handler.ChannelConnections>",
+      "sourceType": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig"
+    },
+    {
+      "name": "group-channel-connections-config.ca-cert",
+      "type": "org.springframework.core.io.Resource",
+      "sourceType": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig"
+    },
+    {
+      "name": "group-channel-connections-config.ssl-cert",
+      "type": "org.springframework.core.io.Resource",
+      "sourceType": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig"
+    },
+    {
+      "name": "group-channel-connections-config.ssl-key",
+      "type": "org.springframework.core.io.Resource",
+      "sourceType": "org.fisco.bcos.autoconfigure.GroupChannelConnectionsPropertyConfig"
+    }
+  ],
+  "hints": []
+}

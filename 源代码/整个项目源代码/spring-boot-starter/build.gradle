@@ -1,0 +1,76 @@
+plugins {
+	id 'org.springframework.boot' version '2.1.4.RELEASE'
+	id 'java'
+    id 'com.github.sherter.google-java-format' version '0.8'
+
+    id "com.arenagod.gradle.MybatisGenerator" version "1.4"
+}
+
+apply plugin: 'io.spring.dependency-management'
+apply plugin: 'idea'
+apply plugin: 'eclipse'
+/////
+apply plugin: 'java'
+apply plugin: 'org.springframework.boot'
+
+description = 'Spring Boot Starter'
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
+googleJavaFormat {
+  options style: 'AOSP'
+  source = sourceSets*.allJava
+  include '**/*.java'
+  exclude '**/temp/*.java'
+  exclude '**/solidity/*.java'
+}
+
+verifyGoogleJavaFormat {
+  source = sourceSets*.allJava
+  include '**/*.java'
+  exclude '**/temp/*.java'
+  exclude '**/solidity/*.java'
+}
+
+check.dependsOn.remove(test)
+check.dependsOn.remove(verifyGoogleJavaFormat)
+
+repositories {
+    maven { url "http://maven.aliyun.com/nexus/content/groups/public/" }
+    maven { url "https://dl.bintray.com/ethereum/maven/" }
+    maven { url "https://oss.sonatype.org/content/repositories/snapshots" }
+    mavenCentral()
+}
+
+dependencies {
+	compile 'org.springframework.boot:spring-boot-starter-logging'
+	compile 'org.codehaus.groovy:groovy-all:2.5.6'
+	implementation 'org.springframework.boot:spring-boot-starter-actuator'
+	annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    compile 'org.fisco-bcos:web3sdk:2.1.0'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    compile("org.springframework.boot:spring-boot-starter-thymeleaf")
+   }
+
+configurations {
+	all {
+		exclude group: 'org.slf4j', module: 'slf4j-log4j12'
+	}
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+test {
+    systemProperty "jdk.tls.namedGroups", "secp256k1"
+}
+
+apply plugin: "com.arenagod.gradle.MybatisGenerator"
+
+
+

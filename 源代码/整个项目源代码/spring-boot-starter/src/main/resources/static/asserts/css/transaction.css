@@ -1,0 +1,40 @@
+.transaction{
+    width:350px;
+    margin:0 auto;
+}
+
+.normal-input{
+    width:206px;
+    display: inline-block;
+    margin: 5px;
+    left:40%;
+}
+.inner-input{
+    margin: 5px;
+    width:60px;
+    display: inline-block;
+}
+
+label {
+    display: inline-block;
+    width: 90px;
+    text-align: right;
+}
+
+.btn{
+    width:100px;
+    margin:5px auto;
+}
+.func{
+    text-align: center;
+    margin:10px;
+}
+.token{
+    margin-top:10px ;
+}
+.msg{
+    text-align: center;
+    width:350px;
+    display: inline-block;
+    margin:0 auto;
+}
